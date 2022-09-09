@@ -1,0 +1,26 @@
+<title>Labs</title>
+<%- include('head'); %>
+
+<body class="fonts container-lg">
+    <%- include('nav');  %>
+    
+    <section class="container-fluid" style="margin-bottom: 0; bottom:0; left: -5%;">
+        <h1 class="h1" id="Labs">Labs</h1>
+        <div class="row justify-content-center gx-5">
+            <% labs.forEach(function(lab){ %>
+                <div class="col-6 mb-3">
+                    <div class="p-4 border border-3 border-light rounded-3 experience-link">
+                        <a class="row" data-bs-toggle="collapse" href=".<%= lab.labname %>">
+                            <div class="col-md align-self-center">
+                                <p class="row h3"><%= lab.name %></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+
+</body>

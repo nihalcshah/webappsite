@@ -1,0 +1,27 @@
+<title>MadLibs</title>
+<%- include('nav'); %>
+<body class="fonts container-lg">
+    <section class="px-4" style="margin-top: 10vw; margin-bottom: 10vw;">
+        <h1>MadLibs</h1>
+        <form action='madlibsresults' method='POST'>
+            <label for="madlibname" class="form-label">Type in a name</label>
+            <input type="text" name="madlibname" id="madlibname" class="form-control mb-3">
+            <label for="colors" class="form-label">Choose a color</label>
+            <input type="color" id="colors" name="color" class="form-control mb-3" value="#ff0000">
+            <label for="beast" class="form-label">Which beast is your favorite?</label>
+            <select class="form-select form-select-sm mb-3" name="beast" id="beast" aria-label=".form-select-sm example">
+                <option selected>Choose a Beast</option>
+                <option value="Ogre">Ogre</option>
+                <option value="Troll">Troll</option>
+                <option value="ur_mom">ur mom</option>
+                <option value="Goblin">Goblin</option>
+            </select>
+            <label for="n1" class="form-label">Give a place name</label>
+            <input type="text" name="n1" id="n1" class="form-control mb-3">
+            <label for="v1" class="form-label">Give a past tense Verb</label>
+            <input type="text" name="v1" id="v1" class="form-control mb-3">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+</body>

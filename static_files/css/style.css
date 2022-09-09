@@ -1,0 +1,160 @@
+body{
+    background-color:#271724;
+    color: #FEEBFA;
+}
+
+a{
+   text-decoration: none;
+   color: #FEEBFA;
+}
+
+.navbar-custom{
+   
+    /* background-color:#271724; */
+    /*background: linear-gradient(to bottom, rgb(0, 8, 20) 0%, rgba(0, 8, 20, 0) 100%);*/
+    color: #FEEBFA; 
+    position: sticky;
+    top: 0;
+}
+
+.navbar-custom ul li{
+    font-weight: 600;
+}
+
+.hoverscroll{
+    position: relative;
+    display: inline-block;
+}
+
+.hoverscroll:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FEEBFA;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hoverscroll:hover:after {
+    transform: scaleX(1);
+    color: #FEEBFA;
+    transform-origin: bottom left;
+}
+
+
+.shine {
+	background: #fff -webkit-gradient(linear, left top, right top, from(#fff), to(#fff), color-stop(0.5, #000)) 0 0 no-repeat;
+	-webkit-background-size: 150px;
+	color: #FEEBFA36;
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	/* text-shadow: 0 0px 0px #fafffaef; */
+}
+
+.chrome {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+	-webkit-background-size: 200px;
+	color: rgba(255, 255, 255, 0.3);
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
+
+@-webkit-keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateX(-30px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateX(0);
+    }
+ }
+ 
+ @keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-30px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+ 
+ .fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-iteration-count: 1;
+    animation-fill-mode: both;
+ } 
+
+
+ @-webkit-keyframes fadeInBottom {
+    0% {
+       opacity: 0;
+       -webkit-transform: translateY(20px);
+    }
+    100% {
+       opacity: 1;
+       -webkit-transform: translateY(0);
+    }
+ }
+ 
+ @keyframes fadeInBottom {
+    0% {
+       opacity: 0;
+       transform: translateY(20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+ }
+ 
+ .fadeInBottom {
+    -webkit-animation-name: fadeInBottom;
+    animation-name: fadeInBottom;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+ } 
+
+ .experience-link{
+   
+ }
+ /* .experience-link:hover{
+   color: #365681;
+   background-color: #FEEBFA;
+ } */
+ .experience-link a:hover{
+   color:#FEEBFA;
+ }

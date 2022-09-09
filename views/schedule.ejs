@@ -1,0 +1,20 @@
+<title>Schedule</title>
+<%- include('head'); %>
+
+<body class="fonts container-lg">
+     
+    <!-- <section class="" style="" > -->
+    <%- include('nav'); %>
+
+
+    <section class="px-4" style="margin-top: 10vw; margin-bottom: 10vw;">
+        <h1>Schedule</h1>
+        <p class="text-center h5"> <%= results[0].date %> <%= results[0].day_type.name %> </p>
+        <p class="text-center">
+            <% results[0].day_type.blocks.forEach(function(elem) { %>
+                <p class="text-center"><%= elem.name %>: <%= elem.start %>-<%= elem.end %> </p>
+            <% }); %>
+        </p>
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+</body>
