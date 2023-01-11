@@ -1,0 +1,15 @@
+<title>Math Facts</title>
+<%- include('head'); %>
+<link rel="stylesheet" href="css/style.css">
+
+<body class="fonts container-lg" style="background-color:#271724;color: #FEEBFA;">
+    <%- include('nav'); %>
+    <section class="container">
+        <h1>Math Facts</h1>
+        <p>Your number: <%= num %></p>
+        <p>Num69: <%= num69 %></p>
+        <p>Num420: <%= num420 %></p>
+        <a href="./<%=num%>?format=json">json</a>
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+</body>

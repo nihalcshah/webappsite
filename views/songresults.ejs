@@ -1,0 +1,22 @@
+<title>Song Votes</title>
+<%- include('nav'); %>
+<body class="fonts container-lg">
+    <section class="px-4" style="margin-top: 10vw; margin-bottom: 10vw;">
+        <h1>Song Votes</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 p-2 fs-3">Song Name</div>
+                <div class="col-6 p-2 fs-3">Votes</div>
+            </div>
+            <% results.forEach(function(elem){  %>
+                <div class="row">
+                    <div class="col-6 p-2 fs-3"><%= elem['songname'] %></div>
+                    <div class="col-6 p-2 fs-3"><%= elem['votes'] %></div>
+                </div>
+            <% }); %>
+            <a href="/melodicblue" class="btn btn-light">Vote Again</a>
+        </div>
+
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+</body>

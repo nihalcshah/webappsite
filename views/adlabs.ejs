@@ -1,0 +1,15 @@
+<title>MadLibs</title>
+<%- include('nav'); %>
+<body class="fonts container-lg">
+    <section class="px-4" style="margin-top: 10vw; margin-bottom: 10vw;">
+        <h1>Add Labs</h1>
+        <form action='labs' method='POST'>
+            <label for="labname" class="form-label">Lab Name</label>
+            <input type="text" name="labname" id="labname" class="form-control mb-3">
+            <label for="labpath" class="form-label">Lab Path</label>
+            <input type="text" name="labpath" id="labpath" class="form-control mb-3">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+</body>

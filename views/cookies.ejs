@@ -1,0 +1,45 @@
+<title>Song Form</title>
+<%- include('head'); %>
+<link rel="stylesheet" href="css/style.css">
+
+
+<body class="fonts container-lg" style="background-color:#271724;color: #FEEBFA;">
+
+    <%- include('nav'); %>
+    <section class="container">
+       <div class="row fs-3" >Your clicks are: <p id="clicks"><%= clicks %></p></div>
+       <div class="row fs-3" id="visits">Your visits are: <%= visits %></div>
+       <button class="btn btn-primary" id="increaseclicks" type="button" onclick="clickCountUp()">Increase Clicks</button>
+       <div class="row" id="complete">
+            
+       </div>
+    </section>
+    <script type="text/javascript">
+        const MY_COOKIE_NAME = 'clicks';
+        function clickCountUp() {
+            let num_clicks_string = readCookieFromBrowser(MY_COOKIE_NAME); 
+
+            let num_clicks = Number(num_clicks_string) + 1;                     
+            document.getElementById('clicks').innerHTML = num_clicks;           
+            writeCookieToBrowser(MY_COOKIE_NAME,num_clicks);                    
+        }
+        function writeCookieToBrowser(cookie_name,cookie_value){
+            cookieStore.get(cookie_name).then( function(cookie){
+                let cookie_string = `${cookie_name}=${cookie_value};`
+                console.log(cookie_string)
+                document.cookie = cookie_string;                                  
+            })
+        }
+        function readCookieFromBrowser(cookie_to_parse_out){
+            let decodedCookie = decodeURIComponent(document.cookie);            
+            let all_cookies_array = decodedCookie.split('; ');                  
+            let specific_cookie_row = all_cookies_array.find( function(arr_elem){
+                return arr_elem.startsWith(`${cookie_to_parse_out}=`);            
+            })
+            let desired_cookie_key_val = specific_cookie_row.split('=');        
+            let desired_cookie_key = desired_cookie_key_val[0]                  
+            let desired_cookie_val = desired_cookie_key_val[1]                  
+            return desired_cookie_val;                                          
+        }
+    </script>
+</body>

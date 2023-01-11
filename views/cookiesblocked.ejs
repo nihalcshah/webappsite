@@ -1,0 +1,56 @@
+<title>Song Form</title>
+<%- include('head'); %>
+<link rel="stylesheet" href="css/style.css">
+
+
+<body class="fonts container-lg" style="background-color:#271724;color: #FEEBFA;">
+
+    <%- include('nav'); %>
+    <section class="container">
+       <div class="fs-3">You are not logged in.</div>
+       <button onclick="login()" class="btn btn-primary">Click here to log in</button>
+    </section>
+    <script>
+        async function login(){
+            console.log("hi")
+            const response = await fetch(
+                "../login",
+                {}
+            );
+            console.log('fs1')
+            const data = await response.json();
+            console.log(data)
+            window.location.href = "../cookies/"
+        }
+        
+        function clearAll(){
+            var allCookies = document.cookie.split(';');
+                
+                // The "expire" attribute of every cookie is 
+                // Set to "Thu, 01 Jan 1970 00:00:00 GMT"
+                for (var i = 0; i < allCookies.length; i++)
+                    document.cookie = allCookies[i] + "=;expires="
+                    + new Date(0).toUTCString();
+            window.location.href = "../cookies/";
+        }
+
+        function writeCookieToBrowser(cookie_name,cookie_value){
+            cookieStore.get(cookie_name).then( function(cookie){
+                let cookie_string = `${cookie_name}=${cookie_value};`
+                console.log(cookie_string)
+                document.cookie = cookie_string;                                  
+            })
+        }
+        function readCookieFromBrowser(cookie_to_parse_out){
+            let decodedCookie = decodeURIComponent(document.cookie);            
+            let all_cookies_array = decodedCookie.split('; ');                  
+            let specific_cookie_row = all_cookies_array.find( function(arr_elem){
+                return arr_elem.startsWith(`${cookie_to_parse_out}=`);            
+            })
+            let desired_cookie_key_val = specific_cookie_row.split('=');        
+            let desired_cookie_key = desired_cookie_key_val[0]                  
+            let desired_cookie_val = desired_cookie_key_val[1]                  
+            return desired_cookie_val;                                          
+        }
+    </script>
+</body>

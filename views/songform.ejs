@@ -1,0 +1,20 @@
+<title>Song Form</title>
+<%- include('head'); %>
+<link rel="stylesheet" href="css/style.css">
+
+<body class="fonts container-lg" style="background-color:#271724;color: #FEEBFA;">
+    <%- include('nav'); %>
+    <section class="container">
+        <h4>Pick Your Favorite Melodic Blue Song</h4>
+        <form action="songresults" method="POST">
+            <select class="form-select form-select-sm mb-3" name="songselect" id="songselect" required>
+                <option selected>Choose a Song</option>
+                <% results.forEach(function(elem){  %>
+                    <option value="<%= elem['songname'] %>"><%= elem['songname'] %></option>
+                <% }); %>
+            </select>
+            <button class="btn btn-dark" type="submit">Submit</button>
+        </form>
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+</body>

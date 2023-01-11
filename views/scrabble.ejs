@@ -1,0 +1,47 @@
+<title>Song Form</title>
+<%- include('head'); %>
+<link rel="stylesheet" href="css/style.css">
+
+
+<body class="fonts container-lg" style="background-color:#271724;color: #FEEBFA;">
+
+    <%- include('nav'); %>
+    <section class="container">
+        <h4>Put in your scrabble word with a "." at every unknown letter</h4>
+        <form method="get">
+            <input type="form-control text" name="word" id="word">
+            <button class="btn btn-dark" type="button" onclick="doTheFetch()">Submit</button>
+        </form>
+        <div id="k">
+            
+        </div>
+    </section>
+    <script type="text/javascript">
+        async function doTheFetch(){
+            console.log("hit")
+
+            // console.log(document.getElementById("word").innerHTML)
+            var wordstring = document.getElementById("word").value
+            console.log(wordstring)
+            const formData = new FormData();
+            formData.append("word", wordstring)
+            console.log(formData)
+            const info = { word: wordstring};
+            const response = await fetch(
+                "http://localhost:8080/scrabblejson",
+                {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: JSON.stringify(info)
+                } 
+            );
+            const data = await response.json();
+            console.log(data)
+            let counter_span = document.getElementById("k")
+            counter_span.innerHTML = data.possiblewords;
+        }
+    </script>
+</body>

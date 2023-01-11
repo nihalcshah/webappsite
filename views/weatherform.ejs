@@ -1,0 +1,18 @@
+<title>Weather</title>
+<%- include('head'); %>
+<link rel="stylesheet" href="css/style.css">
+
+<body class="fonts container-lg" style="background-color:#271724;color: #FEEBFA;">
+    <%- include('nav'); %>
+    <section class="container">
+        <form action="getweather" method="POST">
+            <label class="form-label" for="Lat">Latitude</label>
+            <input type="text" name="lat" class="form-control" id="Lat" required>
+            <label class="form-label" for="Long">Longitude</label>
+            <input type="text" name="long" class="form-control" id="Long" required>
+            <br>
+            <button class=" btn btn-light" type="submit">Submit</button>
+        </form>
+    </section>
+    <script type="text/javascript" src="./js/basic.js"></script>
+</body>
